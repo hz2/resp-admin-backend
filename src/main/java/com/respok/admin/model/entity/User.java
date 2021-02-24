@@ -3,10 +3,6 @@ package com.respok.admin.model.entity;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-/**
- * @author ganchaoyang
- * @date 2019/3/1013:55
- */
 @ApiModel("用户实体")
 public class User {
 

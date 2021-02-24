@@ -6,12 +6,9 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.web.bind.annotation.*;
 import springfox.documentation.annotations.ApiIgnore;
 
-/**
- * @author ganchaoyang
- * @date 2019/3/1013:55
- */
 @RestController
 @RequestMapping("/user")
+
 @Api(tags = "用户相关接口", description = "提供用户相关的Rest API")
 public class UserController {
 

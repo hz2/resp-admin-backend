@@ -16,12 +16,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 import java.util.Collections;
 
 import static com.google.common.collect.Lists.newArrayList;
-
-/**
- * @author ganchaoyang
- * @date 2019/3/1014:16
- */
-
+ 
 @Configuration
 @EnableSwagger2
 
