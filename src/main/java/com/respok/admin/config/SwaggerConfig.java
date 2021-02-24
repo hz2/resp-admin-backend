@@ -30,12 +30,20 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2).select()
                 .apis(RequestHandlerSelectors.basePackage("com.respok.admin.controller"))
-                .paths(Predicates.or(PathSelectors.ant("/user/add"), PathSelectors.ant("/user/find/*"))).build()
-                .apiInfo(apiInfo()).useDefaultResponseMessages(false).globalResponseMessage(RequestMethod.GET,
+                .paths(
+                    Predicates.or(
+                        PathSelectors.ant("/user/add"), 
+                        PathSelectors.ant("/user/find/*"),
+                        PathSelectors.ant("/user/update"),
+                        PathSelectors.ant("/user/delete/*")
+                        )).build()
+                .apiInfo(apiInfo()).useDefaultResponseMessages(false).globalResponseMessage(
+                    RequestMethod.GET,
                         newArrayList(
                                 new ResponseMessageBuilder().code(500).message("服务器发生异常")
                                         .responseModel(new ModelRef("Error")).build(),
-                                new ResponseMessageBuilder().code(403).message("资源不可用").build()));
+                                new ResponseMessageBuilder().code(403).message("资源不可用").build()
+                                ));
     }
 
     private ApiInfo apiInfo() {
