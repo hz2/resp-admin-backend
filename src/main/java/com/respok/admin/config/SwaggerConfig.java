@@ -36,18 +36,33 @@ public class SwaggerConfig {
                 //         PathSelectors.ant("/user/delete/*")
                 //     ))
                 .build()
-                .apiInfo(apiInfo()).useDefaultResponseMessages(false).globalResponseMessage(
+                .apiInfo(apiInfo())
+                .useDefaultResponseMessages(false)
+                .globalResponseMessage(
                     RequestMethod.GET,
                         newArrayList(
-                                new ResponseMessageBuilder().code(500).message("服务器发生异常")
-                                        .responseModel(new ModelRef("Error")).build(),
-                                new ResponseMessageBuilder().code(403).message("资源不可用").build()
+                                new ResponseMessageBuilder()
+                                    .code(500)
+                                    .message("服务器发生异常")
+                                    .responseModel(new ModelRef("Error"))
+                                    .build(),
+                                new ResponseMessageBuilder()
+                                    .code(403)
+                                    .message("资源不可用")
+                                    .build()
                                 ));
     }
 
     private ApiInfo apiInfo() {
-        return new ApiInfo("Spring Boot项目集成Swagger实例文档", "description", "API V1.0", "Terms of service",
-                new Contact("name", "url", "qq@qq.com"), "MIT", "MIT", Collections.emptyList());
+        return new ApiInfo(
+            "Swagger 实例文档", 
+            "description",
+            "API V1.0",
+            "Terms of service",
+            new Contact("name", "url", "qq@qq.com"),
+            "MIT", "MIT",
+            Collections.emptyList()
+        );
     }
 
 }

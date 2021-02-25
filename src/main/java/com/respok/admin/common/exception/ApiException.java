@@ -4,6 +4,10 @@ import com.respok.admin.common.api.IErrorCode;
 
 
 public class ApiException extends RuntimeException {
+    /**
+     *
+     */
+    private static final long serialVersionUID = 1L;
     private IErrorCode errorCode;
 
     public ApiException(IErrorCode errorCode) {
