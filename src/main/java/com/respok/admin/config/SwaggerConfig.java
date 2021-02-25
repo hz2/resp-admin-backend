@@ -23,15 +23,19 @@ import static com.google.common.collect.Lists.newArrayList;
 public class SwaggerConfig {
     @Bean
     public Docket api() {
-        return new Docket(DocumentationType.SWAGGER_2).select()
-                .apis(RequestHandlerSelectors.basePackage("com.respok.admin.controller"))
-                .paths(
-                    Predicates.or(
-                        PathSelectors.ant("/user/add"), 
-                        PathSelectors.ant("/user/find/*"),
-                        PathSelectors.ant("/user/update"),
-                        PathSelectors.ant("/user/delete/*")
-                        )).build()
+        return new Docket(DocumentationType.SWAGGER_2)
+                .select()
+                .apis(RequestHandlerSelectors.any())
+                .paths(PathSelectors.any())
+                // .apis(RequestHandlerSelectors.basePackage("com.respok.admin.controller"))
+                // .paths(
+                //     Predicates.or(
+                //         PathSelectors.ant("/user/add"), 
+                //         PathSelectors.ant("/user/find/*"),
+                //         PathSelectors.ant("/user/update"),
+                //         PathSelectors.ant("/user/delete/*")
+                //     ))
+                .build()
                 .apiInfo(apiInfo()).useDefaultResponseMessages(false).globalResponseMessage(
                     RequestMethod.GET,
                         newArrayList(
