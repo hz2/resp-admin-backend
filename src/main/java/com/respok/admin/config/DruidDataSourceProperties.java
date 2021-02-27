@@ -2,7 +2,7 @@ package com.respok.admin.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 
-@ConfigurationProperties(prefix = "spring.datasource.druid")
+@ConfigurationProperties(prefix = "druid.datasource.druid")
 public class DruidDataSourceProperties {
 
     /**

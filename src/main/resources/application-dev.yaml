@@ -10,40 +10,42 @@ spring:
     username: root
     password: 12345678
     url: jdbc:mysql://localhost:3306/locresp?useUnicode=true&characterEncoding=utf8&autoReconnect=true&serverTimezone=GMT%2B8
-    # type: com.zaxxer.hikari.HikariDataSource
+    # type: com.zaxxer.hikari.Hika
 
-    # type: com.alibaba.druid.pool.DruidDataSource
-    # druid:
-    #   # 数据库url
-    #   url: jdbc:mysql://localhost:3306/locresp?useUnicode=true&characterEncoding=UTF8&autoReconnect=true&serverTimezone=GMT%2B8
-    #   # 驱动
-    #   driver-class-name: com.mysql.jdbc.Driver
-    #   # 用户名
-    #   username: root
-    #   # 密码
-    #   password: 12345678
-    #   # 最大连接数
-    #   max-active: 100
-    #   # 连接池初始化大小
-    #   initial-size: 1
-    #   # 获取连接最大等待时间
-    #   max-wait: 60000
-    #   # 最小连接数
-    #   min-idle: 1
-    #   # 间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
-    #   time-between-eviction-runs-millis: 60000
-    #   # 一个连接在池中最小生存的时间，单位是毫秒
-    #   min-evictable-idle-time-millis: 300000
-    #   # 验证链接是否有效的sql
-    #   validation-query: select 'x'
-    #   # 空闲时检测连接是否有效
-    #   test-while-idle: true
-    #   # 连接被借出时检查是否有效,影响性能，所以此处关闭
-    #   test-on-borrow: false
-    #   # 当连接返还时检查连接是否有效,影响性能,默认关闭
-    #   test-on-return: false
-    #   # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle，但是在mysql下建议关闭。
-    #   pool-prepared-statements: false
+druid:
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    druid:
+      # 数据库url
+      url: jdbc:mysql://localhost:3306/locresp?useUnicode=true&characterEncoding=UTF8&autoReconnect=true&serverTimezone=GMT%2B8
+      # 驱动
+      driver-class-name: com.mysql.jdbc.Driver
+      # 用户名
+      username: root
+      # 密码
+      password: 12345678
+      # 最大连接数
+      max-active: 100
+      # 连接池初始化大小
+      initial-size: 1
+      # 获取连接最大等待时间
+      max-wait: 60000
+      # 最小连接数
+      min-idle: 1
+      # 间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      time-between-eviction-runs-millis: 60000
+      # 一个连接在池中最小生存的时间，单位是毫秒
+      min-evictable-idle-time-millis: 300000
+      # 验证链接是否有效的sql
+      validation-query: select 'x'
+      # 空闲时检测连接是否有效
+      test-while-idle: true
+      # 连接被借出时检查是否有效,影响性能，所以此处关闭
+      test-on-borrow: false
+      # 当连接返还时检查连接是否有效,影响性能,默认关闭
+      test-on-return: false
+      # 是否缓存preparedStatement，也就是PSCache。PSCache对支持游标的数据库性能提升巨大，比如说oracle，但是在mysql下建议关闭。
+      pool-prepared-statements: false
 
 
 logging:

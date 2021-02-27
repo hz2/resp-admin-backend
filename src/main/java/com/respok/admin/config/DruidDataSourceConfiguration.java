@@ -20,7 +20,7 @@ import org.springframework.jdbc.datasource.DataSourceTransactionManager;
 
 @Configuration
 @EnableConfigurationProperties({ DruidDataSourceProperties.class })
-@ConditionalOnProperty(name = "spring.datasource.druid.url")
+@ConditionalOnProperty(name = "druid.datasource.druid.url")
 @MapperScan(value = { "com.respok.admin.mapper" }, sqlSessionFactoryRef = "sqlSessionFactory")
 public class DruidDataSourceConfiguration {
 
@@ -67,7 +67,7 @@ public class DruidDataSourceConfiguration {
         // 控制台管理用户名
         servletRegistrationBean.addInitParameter("loginUsername", "admin");
         // 控制台管理密码
-        servletRegistrationBean.addInitParameter("loginPassword", "qq.qq");
+        servletRegistrationBean.addInitParameter("loginPassword", "admin");
         // 是否可以重置数据源，禁用HTML页面上的“Reset All”功能
         servletRegistrationBean.addInitParameter("resetEnable", "false");
         return servletRegistrationBean ;
@@ -101,7 +101,7 @@ public class DruidDataSourceConfiguration {
         final SqlSessionFactoryBean sessionFactory = new SqlSessionFactoryBean();
         sessionFactory.setDataSource(druidDataSource);
         sessionFactory.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResources("classpath:sqlmap/*Mapper.xml"));
+                .getResources("classpath:mapper/*Mapper.xml"));
         return sessionFactory.getObject();
     }
 
